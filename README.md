@@ -4,7 +4,7 @@
 ## [ 9월 08일 ] 
 2주차 수업은 약간 생소한 내용도 있어서 간단히 프로그램 따라해보고 복습하는 식으로 진행했습니다.<br>
 ![123456](https://user-images.githubusercontent.com/80237099/132681792-058cbca0-3d45-44bb-bf4e-3b12d0b16402.png)<br>
-실행결과도 따라해보고
+실행결과도 따라해보고<br>
 ![1234(2)](https://user-images.githubusercontent.com/80237099/132681498-1914137d-5001-4b20-93df-fbc4cfe73d4c.png)<br>
 생소한 결과도 받아봤습니다.
 
