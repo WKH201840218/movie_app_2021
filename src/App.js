@@ -2,6 +2,7 @@
 
 const foodLike = [
   {
+    id : 2,
     name: "food",
     image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.everydayhealth.com%2Fdiet-nutrition%2Ftop-10-worst-foods-you-should-give-up%2F&psig=AOvVaw2yWirAkesPu-l2xA2eb2tC&ust=1631770839044000&source=images&cd=vfe&ved=0CAkQjhxqFwoTCMizopyigPMCFQAAAAAdAAAAABAD"
   }
@@ -20,7 +21,7 @@ function App() {
   return (
     <div>
       {
-      foodLike.map(dish =>  (<Food name={dish.name} picture={dish.image}/>))
+      foodLike.map(dish =>  (<Food key={dish.id} name={dish.name} picture={dish.image}/>))
       }
     </div>
   )
