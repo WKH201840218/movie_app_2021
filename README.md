@@ -14,6 +14,50 @@ hello코딩으로 간단히 체크 해보았고 npm쪽에는 문제는 없었습
 ### 타이밍 도중 TypeError가 뜨는일이있어서 코딩 연습을 해야겠다는 생각이 들었습니다.<br>
 ### 지속적으로 오류를 고쳐나가며 복습하겠습니다. 
 
+# 따라한 코드 
+## App.js
+import React, {Component} from "react"<br>
+<br>
+class App extends Component {<br>
+  constructor(props){<br>
+    super(props)<br>
+    console.log('constructor')<br>
+  }<br>
+<br>
+  ComponentDidMount() {<br>
+    console.log('componentDidMount')<br>
+  }<br>
+<br>
+  ComponentDidupdate() {<br>
+    console.log('componentDidUpdat')<br>
+  }<br>
+  state = {<br>
+    count: 0<br>
+  }<br>
+<br>
+  add = () => {<br>
+    this.state.count = 1<br>
+  }<br>
+<br>
+  minus = () => {<br>
+    this.state.count = -1<br>
+  }<br>
+<br>
+  render() {<br>
+    return (<br>
+      <.div><br>
+      <.h1>Rhe number is: {this/this.state.count}<./h1><br>
+      <.button onClick={this.add}>Add<./button><br>
+      <.button onClick={this.minus}>Minus</.button><br>
+      <./div><br>
+    )<br>
+  } <br>
+}<br>
+<br>
+export default App<br>
+
+### MD파일을 작성할때 코딩을 넣으면 인식해버려서 앞에 . 표시를 넣었습니다. -->
+
 
 
 
