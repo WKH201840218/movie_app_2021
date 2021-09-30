@@ -1,6 +1,25 @@
 # 원강희 201840218
 
+
 ## [ 9월 13일 ]
+4주차 수업에 대해서 복습해봤습니다.<br>
+이번 복습은 npm add와 Minus에 대해 복습해봤습니다.<br>
+npm 부분에 숙련도가 부족해서 약간의 오류가 있긴 했지만 조금씩 보완해가는 중입니다.<br>
+
+![1001자료](https://user-images.githubusercontent.com/80237099/135497471-b6c8672c-c762-4486-b5ea-c1fc94f09620.png)<br>
+npm 복습 코드이며 코드나 npm에 문제가 있나 싶어서 수업에 쓰던<br>
+![10013](https://user-images.githubusercontent.com/80237099/135502236-b77e07ee-c699-496a-82f3-e70b37bcb98c.png)<br>
+hello코딩으로 간단히 체크 해보았고 npm쪽에는 문제는 없었습니다.<br>
+
+### 타이밍 도중 TypeError가 뜨는일이있어서 코딩 연습을 해야겠다는 생각이 들었습니다.<br>
+### 지속적으로 오류를 고쳐나가며 복습하겠습니다. 
+
+
+
+
+
+
+<!-- ## [ 9월 13일 ]
 3주차 수업은 리엑트 기초개념에 대해 공부해봤습니다.<br>
 기본적으로 교수님 수업 코드를 따라적어서 비슷한 키워드로 정했습니다..<br>
 ![3주차 2](https://user-images.githubusercontent.com/80237099/133769788-400be050-1dcd-4dd6-9ca9-8cb5781576f7.png)<br>
@@ -38,7 +57,7 @@ import App from './App';<br>
 <br>
 ReactDOM.render(<.App />, document.getElementById('root'))<br>
 
-### MD파일을 작성할때 코딩을 넣으면 인식해버려서 앞에 . 표시를 넣었습니다.
+### MD파일을 작성할때 코딩을 넣으면 인식해버려서 앞에 . 표시를 넣었습니다. -->
 
 
 

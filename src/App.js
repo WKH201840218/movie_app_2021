@@ -1,44 +1,56 @@
-
-
-import React, {Component} from "react"
+// import { render } from "@testing-library/react"
+import {Component} from "react"
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    console.log('constructor')
-  }
-
-  ComponentDidMount() {
-    console.log('componentDidMount')
-  }
-
-  ComponentDidupdate() {
-    console.log('componentDidUpdat')
-  }
-  state = {
-    count: 0
-  }
-
-  add = () => {
-    this.state.count = 1
-  }
-
-  minus = () => {
-    this.state.count = -1
-  }
-
   render() {
     return (
-      <div>
-      <h1>Rhe number is: {this/this.state.count}</h1>
-      <button onClick={this.add}>Add</button>
-      <button onClick={ this.minus}>Minus</button>
-      </div>
+      <h1>hello</h1>
     )
-  } 
+  }
 }
 
 export default App
+
+
+// import React, {Component} from "react"
+
+// class App extends Component {
+//   constructor(props){
+//     super(props)
+//     console.log('constructor')
+//   }
+
+//   ComponentDidMount() {
+//     console.log('componentDidMount')
+//   }
+
+//   ComponentDidupdate() {
+//     console.log('componentDidUpdat')
+//   }
+//   state = {
+//     count: 0
+//   }
+
+//   add = () => {
+//     this.state.count = 1
+//   }
+
+//   minus = () => {
+//     this.state.count = -1
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//       <h1>Rhe number is: {this/this.state.count}</h1>
+//       <button onClick={this.add}>Add</button>
+//       <button onClick={this.minus}>Minus</button>
+//       </div>
+//     )
+//   } 
+// }
+
+// export default App
 
 // const foodLike = [
 //   {
@@ -79,29 +91,28 @@ export default App
 // export default App;
 
 
-const foodLik = [
-  {
-    name: "food",
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.everydayhealth.com%2Fdiet-nutrition%2Ftop-10-worst-foods-you-should-give-up%2F&psig=AOvVaw2yWirAkesPu-l2xA2eb2tC&ust=1631770839044000&source=images&cd=vfe&ved=0CAkQjhxqFwoTCMizopyigPMCFQAAAAAdAAAAABAD"
-  }
-]
-function App() {
-  return (
-    <div>
-      <h1>Hello</h1>
-      <Food fav="kimchi"/>
-      <potato bar="you" />
-    </div>
-  );
-} 
+// const foodLik = [
+//   {
+//     name: "food",
+//     image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.everydayhealth.com%2Fdiet-nutrition%2Ftop-10-worst-foods-you-should-give-up%2F&psig=AOvVaw2yWirAkesPu-l2xA2eb2tC&ust=1631770839044000&source=images&cd=vfe&ved=0CAkQjhxqFwoTCMizopyigPMCFQAAAAAdAAAAABAD"
+//   }
+// ]
+// function App() {
+//   return (
+//     <div>
+//       <h1>Hello</h1>
+//       <Food fav="kimchi"/>
+//       <potato bar="you" />
+//     </div>
+//   );
+// } 
 
-function Food(foo) {
-  const {fav} = foo
-  return <h1>I libke {fav}</h1>
-    }
+// function Food(foo) {
+//   const {fav} = foo
+//   return <h1>I libke {fav}</h1>
+// }
 
-export default App;
-
+// export default App;
 
 
 // function App() {
