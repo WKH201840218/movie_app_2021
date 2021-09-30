@@ -1,5 +1,44 @@
 
 
+import React, {Component} from "react"
+
+class App extends Component {
+  constructor(props){
+    super(props)
+    console.log('constructor')
+  }
+
+  ComponentDidMount() {
+    console.log('componentDidMount')
+  }
+
+  ComponentDidupdate() {
+    console.log('componentDidUpdat')
+  }
+  state = {
+    count: 0
+  }
+
+  add = () => {
+    this.state.count = 1
+  }
+
+  minus = () => {
+    this.state.count = -1
+  }
+
+  render() {
+    return (
+      <div>
+      <h1>Rhe number is: {this/this.state.count}</h1>
+      <button onClick={this.add}>Add</button>
+      <button onClick={ this.minus}>Minus</button>
+      </div>
+    )
+  } 
+}
+
+export default App
 
 // const foodLike = [
 //   {
