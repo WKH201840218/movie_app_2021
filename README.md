@@ -1,7 +1,63 @@
 # 원강희 201840218
 
 
-## [ 9월 13일 ]
+## [ 10월 6일 ]
+교수님 저번주 날짜를 착각해서 9월 13일로 잘못올렸습니다.<br>
+날짜 수정했습니다. 죄송합니다.<br>
+
+axios install확인 해보았고 큰 문제는 없었습니다.<br>
+![10091](https://user-images.githubusercontent.com/80237099/136626188-f05456b7-b6c7-4169-b97f-9bb8ed6f76c2.png)<br>
+![10092](https://user-images.githubusercontent.com/80237099/136626192-74915254-ed5e-4eb6-bb68-da3043d7e080.png)<br>
+
+인스톨 과정과 결과를 확인해보았고<br>
+json파일에 있는 것을 확인후 영화 코드를 따라 적었습니다.<br>
+React 코드나 axios 코드에 문제가 없는 것을 확인했는데 Failed to compile.<br>
+오류가 지속적으로 나타나 무엇이 문제인가 찾아봤더니 ComponentDidMount의 앞에<br>
+대문자가 소문자로 잘못적어서 작은 고생을 했지만, 코드 완성후 결과까지 도출했습니다.<br>
+![10093](https://user-images.githubusercontent.com/80237099/136626193-148e564d-e423-43df-ad0e-26d58d2341ca.png)<br>
+
+# 따라한 코드 
+## App.js
+<br>
+import React from "react"
+import axios from "axios"
+
+class App extends React.Component {
+    state = {
+        isLoading:true, 
+        movies: []
+    }
+
+    getMovies = async () => {
+        const {
+            data: {
+                data: {movies}
+            }
+        }
+        // const movies
+         = await axios.get('https://yts-proxy.now.sh/list_movies.json')
+        console.log(movies);
+    }
+
+    ComponentDidMount() {
+        this.getMovies()
+    }
+    render() {
+        const { isLoading } = this.state
+        return(
+            <div>
+                {isLoading ? 'Loading...' : '영화 데이터 출력'}
+            </div>
+        )
+    }
+}
+export default App
+
+
+
+
+
+<!-- ## [ 9월 29일 ]
 4주차 수업에 대해서 복습해봤습니다.<br>
 이번 복습은 npm add와 Minus에 대해 복습해봤습니다.<br>
 npm 부분에 숙련도가 부족해서 약간의 오류가 있긴 했지만 조금씩 보완해가는 중입니다.<br>
@@ -56,14 +112,14 @@ class App extends Component {<br>
 <br>
 export default App<br>
 
-### MD파일을 작성할때 코딩을 넣으면 인식해버려서 앞에 . 표시를 넣었습니다. -->
+### MD파일을 작성할때 코딩을 넣으면 인식해버려서 앞에 . 표시를 넣었습니다. --> 
 
 
 
 
 
 
-<!-- ## [ 9월 13일 ]
+<!-- ## [ 9월 15일 ]
 3주차 수업은 리엑트 기초개념에 대해 공부해봤습니다.<br>
 기본적으로 교수님 수업 코드를 따라적어서 비슷한 키워드로 정했습니다..<br>
 ![3주차 2](https://user-images.githubusercontent.com/80237099/133769788-400be050-1dcd-4dd6-9ca9-8cb5781576f7.png)<br>
