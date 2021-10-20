@@ -1,7 +1,119 @@
 # 원강희 201840218
 
+ ## [ 10월 13일 ]
 
-## [ 10월 6일 ]
+ 오늘은 영화앱에 Movie.js까지 추가해 보았습니다.<br>
+
+컴플리트 실패했다는 오류가 있어서 영상보고 다시 따해보았으며,<br>
+js에 class를 넣는게 html코딩 하는 느낌이 있어서 친숙한 느낌이 있었습니다.<br>
+
+![js1](https://user-images.githubusercontent.com/80237099/138008248-a0106abf-8609-4ef9-ae2d-461b1d06a9cd.png)<br>
+className부분 이해하기 위해 다시 영상보며 시간을 들였으며,<br>
+![js2](https://user-images.githubusercontent.com/80237099/138008252-095ef76e-c83c-4de0-a69d-865c78f4fa89.png)<br>
+App.js또한 영상자료와 같이 수정했습니다.
+
+npm start후 저의 코딩실력 부족으로 오류 코드가 자주떠서 여러 시험을 해볼 수 있었습니다.<br>
+
+# 따라한 코드 
+## App.js
+<br>
+
+import React from "react"<br>
+import axios from "axios"<br>
+import Movie from "./Movie"<br>
+import "./App.css"<br>
+
+class App extends React.Component {<br>
+    state = {<br>
+        isLoading:true, <br>
+        movies: []<br>
+    }
+
+    getMovies = async () => {
+        const {
+            data: {
+                data: {movies}
+            }
+        }
+        // const movies
+         = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating')
+         console.log(movies);
+         this.setState({movies, isLoading: false});
+    }
+
+    ComponentDidMount() {
+        this.getMovies()
+    }
+    render() {
+        const { isLoading, movies } = this.state
+        return(
+            <section className='container'>
+                {isLoading ? (
+                    <div className='loader'>
+                        <span className='loader-text'>Loading...</span>
+                    </div>
+                ) : (
+                    <div className='movies'>
+                        {
+                            movies.map((movie) => {
+                                console.log(movie);
+                                return (
+                                <Movie
+                                key = {movie.id}
+                                id = {movie.id}
+                                year = {movie.year}
+                                title = {movie.title}
+                                summary = {movie.summary}
+                                poster = {movie.medium_cover_image}
+                                genres = {movie.genres}
+                                 />
+                                ) }) }
+                    </div>
+                )
+                }
+            </section>
+        )
+    }
+}
+
+export default App<br>
+<br>
+
+
+## Movie.js
+<br>
+
+import PropTypes from 'prop-types'<br>
+import "./Movie.css"<br>
+<br>
+function Movie({title, year, summary, poster, genres}) {<br>
+    return (<br>
+        <.div className='movie'><br>
+        <.img src={poster} alt={title} title={title} /><br>
+        <.div className='movie-data'><br>
+            <.h3 className='movie-title'>{title}<./h3><br>
+            <.h3 className='movie-year'>{year}<./h3><br>
+            <.p className='movie-summary'>{summary}<./p><br>
+        <./div><br>
+        <./div><br>
+    )<br>
+}<br>
+<br>
+Movie.PropTypes = {<br>
+    id: PropTypes.number.isRequired,<br>
+    year: PropTypes.string.isRequired,<br>
+    title: PropTypes.string.isRequired,<br>
+    summary: PropTypes.string.isRequired,<br>
+    poster: PropTypes.string.isRequired,<br>
+    genres: PropTypes.array(PropTypes.string).isRequired<br>
+}<br>
+<br>
+export default Movie
+
+
+
+
+<!-- ## [ 10월 6일 ]
 교수님 저번주 날짜를 착각해서 9월 13일로 잘못올렸습니다.<br>
 날짜 수정했습니다. 죄송합니다.<br>
 
@@ -51,7 +163,7 @@ class App extends React.Component {
         )
     }
 }
-export default App
+export default App -->
 
 
 
