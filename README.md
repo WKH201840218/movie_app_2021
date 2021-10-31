@@ -75,14 +75,14 @@ Movie.PropTypes = {
 export default Movie<br>
 
 ## About.js
-import './About.css'
-function About() {
-    return (
-        <.span className='about__container'>
-            <.h1>Hello About!<./h1>
-        <./span>
-    )
-}
+import './About.css'<br>
+function About() {<br>
+    return (<br>
+        <.span className='about__container'><br>
+            <.h1>Hello About!<./h1><br>
+        <./span><br>
+    )<br>
+}<br>
 
 
 
