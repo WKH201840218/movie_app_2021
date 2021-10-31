@@ -1,6 +1,90 @@
 # 원강희 201840218
+ ## [ 10월 27일 ]
+ 
+ 교수님 모든 주 MD파일은 차 주 MD파일 작성시 주석처리 해놓아서<br>
+ 코드 하단에 날짜 별로 작성되어있습니다. 늦게 말씀드려서 죄송합니다.<br>
+ 9월 15일, 9월 29일 작성은 둘다 과거 둘다 13일로 되어있어서 <br>
+ 각각 날짜에 맞게 변경했습니다.<br>
 
- ## [ 10월 13일 ]
+ 이번주는 영화앱에 Home.css와 Movie.css를 추가해보았습니다.<br>
+ 코드에 각각 CSS를 수업때 보여주셨던github.EasysIT에서 CSS를 복사해가지고<br>
+ CSS자체에는 문제가 없었지만, App.js컴플리트를 실패해서 적용된 걸 확인하는데<br>
+ 어려움이 있었습니다.<br>
+ ![fail](https://user-images.githubusercontent.com/80237099/139593085-718ece2a-e815-44d8-9cf6-8f882fda090e.png)<br>
+ 수업시간에 했던 코드가 실행안되나 싶었지만, 초기 코드도 실행이 안되기에<br>
+ 10월 30일 토요일까지는 css적용된 걸 확인못했습니다. 다음주 수업전까지 천천히<br>
+ 원인을 찾아볼까 합니다.<br>
+
+ # 따라한 코드 
+## App.js<br>
+ import "./App.css"<br>
+ import { HashRouter, Route } from 'react-router-dom'<br>
+ import About from './routes/About'<br>
+ import Home from './routes/Home'<br>
+<br>
+ function App() {<br>
+    return (<br>
+        <.HashRouter><br>
+            <.Route path='/' exact={true} component={Home}><br>
+            <.h1>Home<./h1><br>
+            <./Route><br>
+            <.Route path='/about' component={About}><br>
+            <.h1>About<./h1><br>
+            <./Route><br>
+        <./HashRouter><br>
+    )<br>
+}<br>
+<br>
+export default App<br>
+
+## Movie.js
+import PropTypes from 'prop-types'<br>
+import "./Movie.css"<br>
+<br>
+function Movie({title, year, summary, poster, genres}) {<br>
+    return (<br>
+        <.div className='movie'><br>
+        <.img src={poster} alt={title} title={title} /><br>
+        <.div className='movie-data'><br>
+            <.h3 className='movie-title'>{title}<./h3><br>
+            <.h5 className='movie-year'>{year}<./h5><br>
+            <.ul className='movie-genres'><br>
+                {<br>
+                    genres.map((genre, index) =>{<br>
+                        return(<br>
+                            <.li key={index} className='movie-genre'>{genre}<./li><br>
+                        )<br>
+                    })<br>
+                }<br>
+            <./ul><br>
+            <.p className='movie-summary'>{summary.slice(0, 180)}<./p><br>
+        <./div><br>
+        <./div><br>
+    )<br>
+}<br>
+<br>
+Movie.PropTypes = {
+    id: PropTypes.number.isRequired,
+    year: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,
+    genres: PropTypes.array(PropTypes.string).isRequired
+}
+<br>
+export default Movie<br>
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ <!-- ## [ 10월 13일 ]
 
  오늘은 영화앱에 Movie.js까지 추가해 보았습니다.<br>
 
@@ -108,7 +192,7 @@ Movie.PropTypes = {<br>
     genres: PropTypes.array(PropTypes.string).isRequired<br>
 }<br>
 <br>
-export default Movie
+export default Movie -->
 
 
 
