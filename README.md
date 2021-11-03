@@ -1,5 +1,94 @@
 # 원강희 201840218
- ## [ 10월 27일 ]
+
+## [ 11월 03일 ]
+### (영화앱)네비게이션 만들어 보기
+이번주는 처음으로 네비게이션을 넣어 보았습니다.<br>
+Navigation.js, Navigation.css추가후 실행 해보았으나,<br>
+저번주와 마찬기지로 Failed to compile.되어서 해결 방한을 찾아봤으나<br>
+실행을 실패했습니다.<br>
+
+>./src/routes/About.js<br>
+Module not found: Can't resolve './About.css'<br>
+in 'C:\webcon\movie_app_2021\src\routes'<br>
+
+위에 오류가 떠서 About.js나 CSS코드에 문제가 있나 싶어서<br>
+코드를 따라 적어봤으나 같은 메세지가 올라와서<br>
+package-lock.json,node-modules파일 제거후 <br>
+>npm install -S react-router-dom
+
+명령어를 입력해 보았으나, <br>
+파일은 찾을 수 없다는 오류가 올라와서 <br>
+수업 영상 다시보면서 오류문제를 찾아보려고 합니다.<br>
+
+## 실습
+Navigation.js'react-router-dom'코드를 넣어봤으며 { Link }<br>
+Navigation.js 안에 HashRouter코드를 추가해 보았습니다.
+
+routes폴더 안에 Detail.js작성후 console에서<br> 
+history을 출력 시도를 해보았습니다.
+
+# 따라한 코드 
+## Navigation.js<br>
+
+>import React from 'react'<br>
+import { Link }  from 'react-router-dom'<br>
+import './Navigation.css'<br>
+<br>
+function Navigation() {<br>
+    return(<br>
+        <.div><br>
+        <.Link to='/'>Home<./Link><br>
+        <.Link to='/about'>About<./Link><br>
+        <./div><br>
+    )<br>
+}<br>
+<br>
+export default Navigation
+
+
+## Detail.js<br>
+
+>import react from "react";<br>
+<br>
+class Detail extends react.Component{<br>
+    ComponentDidMount() {<br>
+        const { location, history } =this.props<br>
+        if ( location.state === undefined ) {<br>
+            history.push('/')<br>
+        }<br>
+    }<br>
+    render() {<br>
+        const { location } = this.props<br>
+        if (location.state) {<br>
+          return(<br>
+               <.span>{location.state.title}<./span><br>
+               )<br>
+        } else {<br>
+          return null<br>
+        }<br>
+      }<br>
+    }<br>
+<br>
+export default Detail;<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- ## [ 10월 27일 ]
  
  교수님 모든 주 MD파일은 차 주 MD파일 작성시 주석처리 해놓아서<br>
  코드 하단에 날짜 별로 작성되어있습니다. 늦게 말씀드려서 죄송합니다.<br>
@@ -83,7 +172,7 @@ function About() {<br>
         <./span><br>
     )<br>
 }<br>
-
+ -->
 
 
 
