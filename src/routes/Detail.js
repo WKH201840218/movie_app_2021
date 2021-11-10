@@ -1,7 +1,7 @@
-import react from "react";
+import React from "react";
 
-class Detail extends react.Component{
-    ComponentDidMount() {
+class Detail extends React.Component{
+    componentDidMount() {
         const { location, history } =this.props
         if ( location.state === undefined ) {
             history.push('/')

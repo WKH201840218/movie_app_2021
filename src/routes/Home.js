@@ -7,14 +7,13 @@ import "./Home.css"
 class Home extends React.Component {
     state = {
         isLoading:true, 
-        movies: []
-    }
-
+        movies: [],
+    };
     getMovies = async () => {
         const {
             data: {
-                data: {movies}
-            }
+                data: { movies },
+            },
         }
         // const movies
          = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating')
@@ -22,8 +21,8 @@ class Home extends React.Component {
          this.setState({movies, isLoading: false});
     }
 
-    ComponentDidMount() {
-        this.getMovies()
+    componentDidMount() {
+        this.getMovies();
     }
     render() {
         const { isLoading, movies } = this.state
@@ -48,7 +47,7 @@ class Home extends React.Component {
                                 poster = {movie.medium_cover_image}
                                 genres = {movie.genres}
                                  />
-                                ) }) }
+                                ); }) }
                     </div>
                 )
                 }
