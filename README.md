@@ -1,6 +1,84 @@
 # 원강희 201840218
 
 ## [ 11월 10일 ]
+### 영화앱 업로드
+github에 업로드 하기위해 package.json터미널에서<br>
+npm i gh-pages 입력후 "gh-pages": "^3.2.3" 추가<br>
+그 후 "scripts"탭에서<br>
+
+>"predeploy": "npm run bulid",<br>
+"deploy": "gh-pages -d build"<br>
+
+입력후 터미널에서 npm run deploy입력해봤습니다.<br>
+Missing err가 올라와서 에러를 문제를 찾는데 다시 집중했습니다.<br>
+<br>
+그 외 github에 영화앱 업로드 하기 위해서 저번주 있었던 오류를<br>
+인터넷을 찾아봐서 고쳐봤습니다. <br>
+>import react from 'react';<br>
+▽<br>
+import React from 'react';<br>
+<br>
+componentDidMount<br>
+▽<br>
+componentDidMount<br>
+
+위와 같은 자잘한 오류를 고치거나 수업중에 말씀하신대로<br>
+>package-lock.json<br>
+node_moudueles<br>
+
+삭제후 npm imstall 그리고<br>
+
+>genres: PropTypes.array(PropTypes.string).isRequired<br>
+▽<br>
+genres: PropTypes.arrayOf(PropTypes.string).isRequired,<br>
+
+숱한 오류를 고친후<br>
+![20211110_154343](https://user-images.githubusercontent.com/80237099/141063496-5e631595-bc65-4ecf-b30f-d63ba3b03bc2.png)<br>
+![20211110_154412](https://user-images.githubusercontent.com/80237099/141063556-ec14125a-c6ec-4d37-9686-9d518a85a178.png)<br>
+몇주만에 영화앱 진입에 성공했습니다. 감사합니다.
+
+# 따라한 코드 
+## package.json<br>
+
+>{<br>
+  "name": "movie_app_2020",<br>
+  "version": "0.1.0",<br>
+  "private": true,<br>
+  "dependencies": {<br>
+    "@testing-library/jest-dom": "^4.2.4",<br>
+    "@testing-library/react": "^9.5.0",<br>
+    "@testing-library/user-event": "^7.2.1",<br>
+    "axios": "^0.19.2",<br>
+    "gh-pages": "^3.2.3",<br>
+    "prop-types": "^15.7.2",<br>
+    "react": "^16.13.1",<br>
+    "react-dom": "^16.13.1",<br>
+    "react-router-dom": "^5.3.0",<br>
+    "react-scripts": "3.4.1"<br>
+  },<br>
+  "scripts": {<br>
+    "start": "react-scripts start",<br>
+    "build": "react-scripts build",<br>
+    "predeploy": "npm run bulid",<br>
+    "deploy": "gh-pages -d build"<br>
+  },<br>
+  "eslintConfig": {<br>
+    "extends": "react-app"<br>
+  },<br>
+  "browserslist": {<br>
+    "production": [<br>
+      ">0.2%",<br>
+      "not dead",<br>
+      "not op_mini all"<br>
+    ],<br>
+    "development": [<br>
+      "last 1 chrome version",<br>
+      "last 1 firefox version",<br>
+      "last 1 safari version"<br>
+    ]<br>
+  },<br>
+  "homepage": "https://WKH201840218.github.io/movie_app_2021"<br>
+}<br>
 
 
 
