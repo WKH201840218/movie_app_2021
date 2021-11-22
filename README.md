@@ -1,12 +1,14 @@
 # 원강희 201840218
 
-<<<<<<< HEAD
 ## [ 11월 16일 ]
 ### 리엑트 복습과 개념
 이번주는 리엑트 개념 암기와 간단한 코드 따라하기로 공부했습니다.<br>
 학교PC위주로 코딩하다 github에 업로드한 markdown-editor 폴더의<br> 
 React문의 실행을 시도 했으나, 집 PC에서 놓친게 있는지Failed to compile.<br> 
-오류가 올라와 문제해결과 개념 위주로 찾아봤습니다.<br>
+오류가 올라와 문제해결 위주로 찾아봤습니다.<br>
+![123](https://user-images.githubusercontent.com/80237099/142908546-051d4dd8-3834-46f4-b151-102e15fb1fed.png)<br>
+간단한 리엑트 오류<br>
+
 <br>
 >### React의 특징
 1. 상호작용이 많은 UI개발에 적합하다.
@@ -211,11 +213,6 @@ genres: PropTypes.arrayOf(PropTypes.string).isRequired,<br>
     ]<br>
   },<br>
   "homepage": "https://WKH201840218.github.io/movie_app_2021"<br>
-<<<<<<< HEAD
-}<br> -->
-=======
-}<br>
->>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
 
 
 
@@ -304,10 +301,8 @@ export default Detail;<br>
 
 
 
-<<<<<<< HEAD
 <!-- # 원강희 201840218
  ## [ 10월 27일 ]
-=======
 
 
 
@@ -316,7 +311,6 @@ export default Detail;<br>
 
 
  <!-- ## [ 10월 27일 ]
->>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
  
  교수님 모든 주 MD파일은 차 주 MD파일 작성시 주석처리 해놓아서<br>
  코드 하단에 날짜 별로 작성되어있습니다. 늦게 말씀드려서 죄송합니다.<br>
@@ -403,14 +397,8 @@ function About() {<br>
 <<<<<<< HEAD
 
  -->
-=======
- -->
-
->>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
 
 
-
- 
  
  
  
