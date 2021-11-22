@@ -1,4 +1,303 @@
 # 원강희 201840218
+
+## [ 11월 16일 ]
+### 리엑트 복습과 개념
+이번주는 리엑트 개념 암기와 간단한 코드 따라하기로 공부했습니다.<br>
+학교PC위주로 코딩하다 github에 업로드한 markdown-editor 폴더의<br> 
+React문의 실행을 시도 했으나, 집 PC에서 놓친게 있는지Failed to compile.<br> 
+오류가 올라와 문제해결과 개념 위주로 찾아봤습니다.<br>
+<br>
+>### React의 특징
+1. 상호작용이 많은 UI개발에 적합하다.
+2. 컴포넌트 로직은 JavaScript로 작성한다.
+3. 캡슐화된 컴포넌트로 개발되어 재사용이 용이하다.
+4. DOM과는 별개로 상태를 관리할 수 있다.
+5. 기술 스택의 나머지 부분에는 관여하지 않는다.
+6. 기존 코드와 별개로 개발이 가능하다.
+7. React Native를 이용하면 모바일 앱도 만들 수 있다.<br>
+<br>
+# 따라한 코드
+## App.js
+// import logo from './logo.svg';<br>
+// import './App.css';<br>
+import React from '/App';<br>
+<br>
+class App extends React.Component {<br>
+  constructor(props) {<br>
+    super(props);<br>
+<br>
+    this.state = { isOpen: false };<br>
+    this.toggleContainer = React.createRef();<br>
+<br>
+    this.onClickHandler = this.onClickHandler.bind(this);<br>
+    this.onClickOutsideHandler = this.onClickOutsideHandler.bind(this);<br>
+  }<br>
+<br>
+  componentDidMount() {<br>
+    window.addEventListener('click', this.onClickOutsideHandler);<br>
+  }<br>
+<br>
+  componentWillUnmount() {<br>
+    window.removeEventListener('click', this.onClickOutsideHandler);<br>
+  }<br>
+<br>
+  onClickHandler() {<br>
+    this.setState(currentState => ({<br>
+      isOpen: !currentState.isOpen<br>
+    }));<br>
+  }<br>
+<br>
+  onClickOutsideHandler(event) {<br>
+    if (this.state.isOpen && !this.toggleContainer.current.contains(event.target)) {<br>
+      this.setState({ isOpen: false });<br>
+    }<br>
+  }<br>
+<br>
+  render() {<br>
+    return (<br>
+      <.div ref={this.toggleContainer}><br>
+        <.button onClick={this.onClickHandler}>Select an option<./button><br>
+        {this.state.isOpen && (<br>
+          <.ul><br>
+            <.li>Option 1<./li><br>
+            <.li>Option 2<./li><br>
+            <.li>Option 3<./li><br>
+          <./ul><br>
+        )}<br>
+      <./div><br>
+    );<br>
+  }<br>
+}<br>
+<br>
+export default App;<br>
+
+## test.js
+<br>
+class MarkdownEditor extends React.Component {<br>
+  constructor(props) {<br>
+    super(props);<br>
+    this.md = new Remarkable();<br>
+    this.handleChange = this.handleChange.bind(this);<br>
+    this.state = { value: 'Hello, **world**!' };<br>
+  }<br>
+<br>
+  handleChange(e) {<br>
+    this.setState({ value: e.target.value });<br>
+  }<br>
+<br>
+  getRawMarkup() {<br>
+    return { __html: this.md.render(this.state.value) };<br>
+  }<br>
+<br>
+  render() {<br>
+    return (<br>
+      <.div className="MarkdownEditor"><br>
+        <.h3>Input<./h3><br>
+        <.label htmlFor="markdown-content"><br>
+          Enter some markdown<br>
+        <./label><br>
+        <.textarea<br>
+          id="markdown-content"<br>
+          onChange={this.handleChange}<br>
+          defaultValue={this.state.value}<br>
+        />
+        <.h3>Output<./h3><br>
+        <.div<br>
+          className="content"<br>
+          dangerouslySetInnerHTML={this.getRawMarkup()}<br>
+        /><br>
+      <./div><br>
+    );<.br>
+  }<br>
+<br>
+ReactDOM.render(<br>
+  <.MarkdownEditor />,<br>
+  document.getElementById('markdown-example')<br>
+);<br>
+<br>
+
+> test.js : https://ko.reactjs.org/ <br>
+
+<br>
+
+### 집PC에서 일어난 markdown-editor/App.js의 문제는<br>복습을 위해 천천히 찾아보겠습니다.
+
+
+
+
+
+
+
+<!-- # 원강희 201840218
+
+## [ 11월 10일 ]
+### 영화앱 업로드
+github에 업로드 하기위해 package.json터미널에서<br>
+npm i gh-pages 입력후 "gh-pages": "^3.2.3" 추가<br>
+그 후 "scripts"탭에서<br>
+
+>"predeploy": "npm run bulid",<br>
+"deploy": "gh-pages -d build"<br>
+
+입력후 터미널에서 npm run deploy입력해봤습니다.<br>
+Missing err가 올라와서 에러를 문제를 찾는데 다시 집중했습니다.<br>
+<br>
+그 외 github에 영화앱 업로드 하기 위해서 저번주 있었던 오류를<br>
+인터넷을 찾아봐서 고쳐봤습니다. <br>
+>import react from 'react';<br>
+▽<br>
+import React from 'react';<br>
+<br>
+componentDidMount<br>
+▽<br>
+componentDidMount<br>
+
+위와 같은 자잘한 오류를 고치거나 수업중에 말씀하신대로<br>
+>package-lock.json<br>
+node_moudueles<br>
+
+삭제후 npm imstall 그리고<br>
+
+>genres: PropTypes.array(PropTypes.string).isRequired<br>
+▽<br>
+genres: PropTypes.arrayOf(PropTypes.string).isRequired,<br>
+
+숱한 오류를 고친후<br>
+![20211110_154343](https://user-images.githubusercontent.com/80237099/141063496-5e631595-bc65-4ecf-b30f-d63ba3b03bc2.png)<br>
+![20211110_154412](https://user-images.githubusercontent.com/80237099/141063556-ec14125a-c6ec-4d37-9686-9d518a85a178.png)<br>
+몇주만에 영화앱 진입에 성공했습니다. 감사합니다.
+
+# 따라한 코드 
+## package.json<br>
+
+>{<br>
+  "name": "movie_app_2020",<br>
+  "version": "0.1.0",<br>
+  "private": true,<br>
+  "dependencies": {<br>
+    "@testing-library/jest-dom": "^4.2.4",<br>
+    "@testing-library/react": "^9.5.0",<br>
+    "@testing-library/user-event": "^7.2.1",<br>
+    "axios": "^0.19.2",<br>
+    "gh-pages": "^3.2.3",<br>
+    "prop-types": "^15.7.2",<br>
+    "react": "^16.13.1",<br>
+    "react-dom": "^16.13.1",<br>
+    "react-router-dom": "^5.3.0",<br>
+    "react-scripts": "3.4.1"<br>
+  },<br>
+  "scripts": {<br>
+    "start": "react-scripts start",<br>
+    "build": "react-scripts build",<br>
+    "predeploy": "npm run bulid",<br>
+    "deploy": "gh-pages -d build"<br>
+  },<br>
+  "eslintConfig": {<br>
+    "extends": "react-app"<br>
+  },<br>
+  "browserslist": {<br>
+    "production": [<br>
+      ">0.2%",<br>
+      "not dead",<br>
+      "not op_mini all"<br>
+    ],<br>
+    "development": [<br>
+      "last 1 chrome version",<br>
+      "last 1 firefox version",<br>
+      "last 1 safari version"<br>
+    ]<br>
+  },<br>
+  "homepage": "https://WKH201840218.github.io/movie_app_2021"<br>
+}<br> -->
+
+
+
+
+
+
+
+<!-- ## [ 11월 03일 ]
+### (영화앱)네비게이션 만들어 보기
+이번주는 처음으로 네비게이션을 넣어 보았습니다.<br>
+Navigation.js, Navigation.css추가후 실행 해보았으나,<br>
+저번주와 마찬기지로 Failed to compile.되어서 해결 방한을 찾아봤으나<br>
+실행을 실패했습니다.<br>
+
+>./src/routes/About.js<br>
+Module not found: Can't resolve './About.css'<br>
+in 'C:\webcon\movie_app_2021\src\routes'<br>
+
+위에 오류가 떠서 About.js나 CSS코드에 문제가 있나 싶어서<br>
+코드를 따라 적어봤으나 같은 메세지가 올라와서<br>
+package-lock.json,node-modules파일 제거후 <br>
+>npm install -S react-router-dom
+
+명령어를 입력해 보았으나, <br>
+파일은 찾을 수 없다는 오류가 올라와서 <br>
+수업 영상 다시보면서 오류문제를 찾아보려고 합니다.<br>
+
+## 실습
+Navigation.js'react-router-dom'코드를 넣어봤으며 { Link }<br>
+Navigation.js 안에 HashRouter코드를 추가해 보았습니다.
+
+routes폴더 안에 Detail.js작성후 console에서<br> 
+history을 출력 시도를 해보았습니다.
+
+# 따라한 코드 
+## Navigation.js<br>
+
+>import React from 'react'<br>
+import { Link }  from 'react-router-dom'<br>
+import './Navigation.css'<br>
+<br>
+function Navigation() {<br>
+    return(<br>
+        <.div><br>
+        <.Link to='/'>Home<./Link><br>
+        <.Link to='/about'>About<./Link><br>
+        <./div><br>
+    )<br>
+}<br>
+<br>
+export default Navigation
+
+
+## Detail.js<br>
+
+>import react from "react";<br>
+<br>
+class Detail extends react.Component{<br>
+    ComponentDidMount() {<br>
+        const { location, history } =this.props<br>
+        if ( location.state === undefined ) {<br>
+            history.push('/')<br>
+        }<br>
+    }<br>
+    render() {<br>
+        const { location } = this.props<br>
+        if (location.state) {<br>
+          return(<br>
+               <.span>{location.state.title}<./span><br>
+               )<br>
+        } else {<br>
+          return null<br>
+        }<br>
+      }<br>
+    }<br>
+<br>
+export default Detail;<br>
+
+
+
+
+
+
+ -->
+
+
+
+
+<!-- # 원강희 201840218
  ## [ 10월 27일 ]
  
  교수님 모든 주 MD파일은 차 주 MD파일 작성시 주석처리 해놓아서<br>
@@ -84,7 +383,7 @@ function About() {<br>
     )<br>
 }<br>
 
-
+ -->
 
 
 
