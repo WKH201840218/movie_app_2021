@@ -1,9 +1,17 @@
+import React from 'react';
 import PropTypes from 'prop-types'
 import "./Movie.css"
+import { Link } from 'react-router-dom'
 
 function Movie({title, year, summary, poster, genres}) {
     return (
         <div className='movie'>
+            <Link
+            to={{
+                pathname: 'movie-detail',
+                state: {title, year, summary, poster, genres}
+            }}
+            >
         <img src={poster} alt={title} title={title} />
         <div className='movie-data'>
             <h3 className='movie-title'>{title}</h3>
@@ -19,17 +27,18 @@ function Movie({title, year, summary, poster, genres}) {
             </ul>
             <p className='movie-summary'>{summary.slice(0, 180)}</p>
         </div>
+        </Link>
         </div>
     )
 }
 
-Movie.PropTypes = {
+Movie.propTypes = {
     id: PropTypes.number.isRequired,
     year: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
-    genres: PropTypes.array(PropTypes.string).isRequired
-}
+    genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Movie

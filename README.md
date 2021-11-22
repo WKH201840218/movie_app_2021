@@ -1,5 +1,6 @@
 # 원강희 201840218
 
+<<<<<<< HEAD
 ## [ 11월 16일 ]
 ### 리엑트 복습과 개념
 이번주는 리엑트 개념 암기와 간단한 코드 따라하기로 공부했습니다.<br>
@@ -130,6 +131,8 @@ ReactDOM.render(<br>
 
 <!-- # 원강희 201840218
 
+=======
+>>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
 ## [ 11월 10일 ]
 ### 영화앱 업로드
 github에 업로드 하기위해 package.json터미널에서<br>
@@ -208,7 +211,11 @@ genres: PropTypes.arrayOf(PropTypes.string).isRequired,<br>
     ]<br>
   },<br>
   "homepage": "https://WKH201840218.github.io/movie_app_2021"<br>
+<<<<<<< HEAD
 }<br> -->
+=======
+}<br>
+>>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
 
 
 
@@ -297,8 +304,19 @@ export default Detail;<br>
 
 
 
+<<<<<<< HEAD
 <!-- # 원강희 201840218
  ## [ 10월 27일 ]
+=======
+
+
+
+
+
+
+
+ <!-- ## [ 10월 27일 ]
+>>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
  
  교수님 모든 주 MD파일은 차 주 MD파일 작성시 주석처리 해놓아서<br>
  코드 하단에 날짜 별로 작성되어있습니다. 늦게 말씀드려서 죄송합니다.<br>
@@ -382,8 +400,13 @@ function About() {<br>
         <./span><br>
     )<br>
 }<br>
+<<<<<<< HEAD
 
  -->
+=======
+ -->
+
+>>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
 
 
 
