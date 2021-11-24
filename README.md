@@ -1,7 +1,10 @@
 # 원강희 201840218
 
+<<<<<<< HEAD
 # 원강희 201840218
 
+=======
+>>>>>>> c2c96cefa229edcf6ebac82aa99ef5a630e40046
 ## [ 11월 16일 ]
 ### 리엑트 복습과 개념
 이번주는 리엑트 개념 암기와 간단한 코드 따라하기로 공부했습니다.<br>
@@ -21,10 +24,15 @@ React문의 실행을 시도 했으나, 집 PC에서 놓친게 있는지Failed t
 6. 기존 코드와 별개로 개발이 가능하다.
 7. React Native를 이용하면 모바일 앱도 만들 수 있다.<br>
 <br>
+<<<<<<< HEAD
 
 # 따라한 코드
 ## App.js
 
+=======
+# 따라한 코드
+## App.js
+>>>>>>> c2c96cefa229edcf6ebac82aa99ef5a630e40046
 // import logo from './logo.svg';<br>
 // import './App.css';<br>
 import React from '/App';<br>
@@ -132,7 +140,18 @@ ReactDOM.render(<br>
 
 
 
+<<<<<<< HEAD
 <!-- ## [ 11월 10일 ]
+=======
+
+
+
+<!-- # 원강희 201840218
+
+=======
+>>>>>>> a03b0f55f2a53ed01b43a4f301478bc5f84eef87
+## [ 11월 10일 ]
+>>>>>>> c2c96cefa229edcf6ebac82aa99ef5a630e40046
 ### 영화앱 업로드
 github에 업로드 하기위해 package.json터미널에서<br>
 npm i gh-pages 입력후 "gh-pages": "^3.2.3" 추가<br>
@@ -210,7 +229,10 @@ genres: PropTypes.arrayOf(PropTypes.string).isRequired,<br>
     ]<br>
   },<br>
   "homepage": "https://WKH201840218.github.io/movie_app_2021"<br>
+<<<<<<< HEAD
 }<br> -->
+=======
+>>>>>>> c2c96cefa229edcf6ebac82aa99ef5a630e40046
 
 
 
@@ -299,6 +321,8 @@ export default Detail;<br>
 
 
 
+<!-- # 원강희 201840218
+ ## [ 10월 27일 ]
 
 
 
@@ -390,12 +414,11 @@ function About() {<br>
         <./span><br>
     )<br>
 }<br>
+<<<<<<< HEAD
+
  -->
 
 
-
-
- 
  
  
  
