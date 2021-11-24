@@ -1,6 +1,138 @@
 # 원강희 201840218
 
-## [ 11월 10일 ]
+# 원강희 201840218
+
+## [ 11월 16일 ]
+### 리엑트 복습과 개념
+이번주는 리엑트 개념 암기와 간단한 코드 따라하기로 공부했습니다.<br>
+학교PC위주로 코딩하다 github에 업로드한 markdown-editor 폴더의<br> 
+React문의 실행을 시도 했으나, 집 PC에서 놓친게 있는지Failed to compile.<br> 
+오류가 올라와 문제해결 위주로 찾아봤습니다.<br>
+![123](https://user-images.githubusercontent.com/80237099/142908546-051d4dd8-3834-46f4-b151-102e15fb1fed.png)<br>
+간단한 리엑트 오류<br>
+
+<br>
+>### React의 특징
+1. 상호작용이 많은 UI개발에 적합하다.
+2. 컴포넌트 로직은 JavaScript로 작성한다.
+3. 캡슐화된 컴포넌트로 개발되어 재사용이 용이하다.
+4. DOM과는 별개로 상태를 관리할 수 있다.
+5. 기술 스택의 나머지 부분에는 관여하지 않는다.
+6. 기존 코드와 별개로 개발이 가능하다.
+7. React Native를 이용하면 모바일 앱도 만들 수 있다.<br>
+<br>
+
+# 따라한 코드
+## App.js
+
+// import logo from './logo.svg';<br>
+// import './App.css';<br>
+import React from '/App';<br>
+<br>
+class App extends React.Component {<br>
+  constructor(props) {<br>
+    super(props);<br>
+<br>
+    this.state = { isOpen: false };<br>
+    this.toggleContainer = React.createRef();<br>
+<br>
+    this.onClickHandler = this.onClickHandler.bind(this);<br>
+    this.onClickOutsideHandler = this.onClickOutsideHandler.bind(this);<br>
+  }<br>
+<br>
+  componentDidMount() {<br>
+    window.addEventListener('click', this.onClickOutsideHandler);<br>
+  }<br>
+<br>
+  componentWillUnmount() {<br>
+    window.removeEventListener('click', this.onClickOutsideHandler);<br>
+  }<br>
+<br>
+  onClickHandler() {<br>
+    this.setState(currentState => ({<br>
+      isOpen: !currentState.isOpen<br>
+    }));<br>
+  }<br>
+<br>
+  onClickOutsideHandler(event) {<br>
+    if (this.state.isOpen && !this.toggleContainer.current.contains(event.target)) {<br>
+      this.setState({ isOpen: false });<br>
+    }<br>
+  }<br>
+<br>
+  render() {<br>
+    return (<br>
+      <.div ref={this.toggleContainer}><br>
+        <.button onClick={this.onClickHandler}>Select an option<./button><br>
+        {this.state.isOpen && (<br>
+          <.ul><br>
+            <.li>Option 1<./li><br>
+            <.li>Option 2<./li><br>
+            <.li>Option 3<./li><br>
+          <./ul><br>
+        )}<br>
+      <./div><br>
+    );<br>
+  }<br>
+}<br>
+<br>
+export default App;<br>
+
+## test.js
+<br>
+class MarkdownEditor extends React.Component {<br>
+  constructor(props) {<br>
+    super(props);<br>
+    this.md = new Remarkable();<br>
+    this.handleChange = this.handleChange.bind(this);<br>
+    this.state = { value: 'Hello, **world**!' };<br>
+  }<br>
+<br>
+  handleChange(e) {<br>
+    this.setState({ value: e.target.value });<br>
+  }<br>
+<br>
+  getRawMarkup() {<br>
+    return { __html: this.md.render(this.state.value) };<br>
+  }<br>
+<br>
+  render() {<br>
+    return (<br>
+      <.div className="MarkdownEditor"><br>
+        <.h3>Input<./h3><br>
+        <.label htmlFor="markdown-content"><br>
+          Enter some markdown<br>
+        <./label><br>
+        <.textarea<br>
+          id="markdown-content"<br>
+          onChange={this.handleChange}<br>
+          defaultValue={this.state.value}<br>
+        />
+        <.h3>Output<./h3><br>
+        <.div<br>
+          className="content"<br>
+          dangerouslySetInnerHTML={this.getRawMarkup()}<br>
+        /><br>
+      <./div><br>
+    );<.br>
+  }<br>
+<br>
+ReactDOM.render(<br>
+  <.MarkdownEditor />,<br>
+  document.getElementById('markdown-example')<br>
+);<br>
+<br>
+
+> test.js : https://ko.reactjs.org/ <br>
+
+<br>
+
+### 집PC에서 일어난 markdown-editor/App.js의 문제는<br>복습을 위해 천천히 찾아보겠습니다.
+
+
+
+
+<!-- ## [ 11월 10일 ]
 ### 영화앱 업로드
 github에 업로드 하기위해 package.json터미널에서<br>
 npm i gh-pages 입력후 "gh-pages": "^3.2.3" 추가<br>
@@ -78,7 +210,7 @@ genres: PropTypes.arrayOf(PropTypes.string).isRequired,<br>
     ]<br>
   },<br>
   "homepage": "https://WKH201840218.github.io/movie_app_2021"<br>
-}<br>
+}<br> -->
 
 
 
