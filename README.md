@@ -1,6 +1,24 @@
 # 원강희 201840218
 
-## [ 11월 16일 ]
+## [ 11월 24일 ]
+### 리엑트 복습과 개념II
+시작전에 github에 io베포하기 위해 npm run deploy 명령어를 입력했으나,<br>
+![20211124_163809](https://user-images.githubusercontent.com/80237099/143195136-f1145d15-bf77-440d-9619-f59aa56210f9.png)<br>
+위와 같은 오류가 나타나 package.json을 찾아본 결과<br>
+![20211124_164009](https://user-images.githubusercontent.com/80237099/143195519-d44553f8-9138-4633-85a7-215cce11dc46.png)<br>
+위 코드의 build코드를 bulid코드로 교체해서 베포에 성공했습니다.<br>
+
+## 수업자료: https://ko.reactjs.org/docs/introducing-jsx.html
+# JSX
+JSX코드는 자바스크립트를 확장한 문법이며 리엑트"엘리먼트"를 생성합니다.<br>
+
+
+
+
+
+
+
+<!-- ## [ 11월 16일 ]
 ### 리엑트 복습과 개념
 이번주는 리엑트 개념 암기와 간단한 코드 따라하기로 공부했습니다.<br>
 학교PC위주로 코딩하다 github에 업로드한 markdown-editor 폴더의<br> 
@@ -125,7 +143,7 @@ ReactDOM.render(<br>
 
 <br>
 
-### 집PC에서 일어난 markdown-editor/App.js의 문제는<br>복습을 위해 천천히 찾아보겠습니다.
+### 집PC에서 일어난 markdown-editor/App.js의 문제는<br>복습을 위해 천천히 찾아보겠습니다. -->
 
 
 
