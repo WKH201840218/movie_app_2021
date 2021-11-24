@@ -22,7 +22,7 @@ React문의 실행을 시도 했으나, 집 PC에서 놓친게 있는지Failed t
 
 # 따라한 코드
 ## App.js
->>>>>>> c2c96cefa229edcf6ebac82aa99ef5a630e40046
+
 // import logo from './logo.svg';<br>
 // import './App.css';<br>
 import React from '/App';<br>
