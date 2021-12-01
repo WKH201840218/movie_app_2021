@@ -40,8 +40,8 @@ ReactDOM.render(element, document.getElementById('root'));<br>
 <br>
 
 ### 결과화면<br>
-![222333](https://user-images.githubusercontent.com/80237099/143781875-375f1d79-ffcd-496d-8c5c-070958f64271.png)<br> -->
 
+![222333](https://user-images.githubusercontent.com/80237099/143781875-375f1d79-ffcd-496d-8c5c-070958f64271.png)<br> -->
 
 
 
