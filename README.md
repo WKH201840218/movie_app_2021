@@ -1,5 +1,15 @@
 # 원강희 201840218
 
+## [ 12월 1일 ]
+### 리엑트 복습과 개념III
+## 수업자료: https://ko.reactjs.org/docs/state-and-lifecycle.html
+오늘은 State and Lifecycle(state와 생명주기)에 대해서 복습해봤습니다.<br>
+
+
+
+
+
+<!-- 
 ## [ 11월 24일 ]
 ### 리엑트 복습과 개념II
 시작전에 github에 io베포하기 위해 npm run deploy 명령어를 입력했으나,<br>
@@ -11,6 +21,26 @@
 ## 수업자료: https://ko.reactjs.org/docs/introducing-jsx.html
 # JSX
 JSX코드는 자바스크립트를 확장한 문법이며 리엑트"엘리먼트"를 생성합니다.<br>
+처음 봤을때는 생소한 문자여서 크게 이해하기 힘들었지만, 자바스크립트의 확장문자<br>
+여서 코딩을 따라하는데는 큰문제 없었습니다.<br>
+
+## 코드 따라하기
+>function formatName(user) {<br>
+  return user.firstName + ' ' + user.lastName;<br>
+<br>
+}<br>
+const user = {<br>
+  firstName: 'Harper',<br>
+  lastName: 'Perez',<br>
+};<br>
+<br>
+const element = <,h1>Hello, {formatName(user)}!<,/h1>;<br>
+<br>
+ReactDOM.render(element, document.getElementById('root'));<br>
+<br>
+
+### 결과화면<br>
+![222333](https://user-images.githubusercontent.com/80237099/143781875-375f1d79-ffcd-496d-8c5c-070958f64271.png)<br> -->
 
 
 
