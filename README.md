@@ -2,8 +2,13 @@
 
 ## [ 12월 1일 ]
 ### 리엑트 복습과 개념III
+이번 README.md파일도 복습 위주로 작성하겠습니다.<br>
+1. State and Lifecycle(스테이트)
+2. Processing events(이벤트)
+3. Conditional rendering(렌더링)
 ## 수업자료: https://ko.reactjs.org/docs/state-and-lifecycle.html
-오늘은 State and Lifecycle(state와 생명주기)에 대해서 복습해봤습니다.<br>
+>## 1. State and Lifecycle
+
 
 
 
