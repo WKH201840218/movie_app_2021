@@ -8,10 +8,98 @@
 3. Conditional rendering(렌더링)
 ## 수업자료: https://ko.reactjs.org/docs/state-and-lifecycle.html
 >## 1. State and Lifecycle
+먼저 React로 시간을 표현하는 State 표현에 대해 복습해봤습니다.<br>
+시간을 자바 스크립트때도 그렇지만 코드를 넣는 것만으로 현 대한민국<br>
+시간에 맟춰지는게 신기했습니다. <br>
 
+### 간단 코딩
+function tick() {<br>
+  const element = (<br>
+    <.div><br>
+      <.h1>Hello, world!<./h1><br>
+      <.h2>It is {new Date().toLocaleTimeString()}.<./h2><br>
+    <./div><br>
+  );<br>
+  ReactDOM.render(<br>
+    element,<br>
+    document.getElementById('root')<br>
+  );<br>
+}<br>
+setInterval(tick, 1000);<br>
 
+### 결과 이미지
+![re1](https://user-images.githubusercontent.com/80237099/144760993-58c6665f-1f30-4c24-a75d-0ba6cc517663.png)
+<br>
+<br>
 
+>## 2. Processing events
 
+· React의 이벤트는 소문자 대신 캐멀 케이스(camelCase)를 사용합니다.<br>
+· JSX를 사용하여 문자열이 아닌 함수로 이벤트 핸들러를 전달합니다.<br>
+이벤트는 이해하기 어려워서 코딩복습에 어려움이 있었습니다.<br>
+
+### 간단 코딩
+class Toggle extends React.Component {<br>
+  constructor(props) {<br>
+    super(props);<br>
+    this.state = {isToggleOn: true};<br>
+<br>
+    // This binding is necessary to make `this` work in the callback<br>
+    this.handleClick = this.handleClick.bind(this);<br>
+  }<br>
+<br>
+  handleClick() {<br>
+    this.setState(prevState => ({<br>
+      isToggleOn: !prevState.isToggleOn<br>
+    }));<br>
+  }<br>
+<br>
+  render() {<br>
+    return (<br>
+      <.button onClick={this.handleClick}><br>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}<br>
+      <./button><br>
+    );<br>
+  }<br>
+}<br>
+<br>
+ReactDOM.render(<br>
+  <.Toggle />,<br>
+  document.getElementById('root')<br>
+);<br>
+### 결과 이미지<br>
+![re2](https://user-images.githubusercontent.com/80237099/144761279-b24fa4b5-5996-4136-a75a-c50d250580ef.png)
+![re3](https://user-images.githubusercontent.com/80237099/144761281-8de5d5df-5e58-4622-aab9-698ec8961814.png)<br>
+<br>
+
+>## 3. Conditional rendering(렌더링)
+if문법이 나와서 약간 친숙한 느낌이 들었으며,<br>
+이벤트에 비해 이해하기 쉬웠습니다.<br>
+<br>
+### 간단 코딩
+function UserGreeting(props) {<br>
+  return <.h1>남의 글자<./h1>;<br>
+}<br>
+<br>
+function GuestGreeting(props) {<br>
+  return <.h1>저의 글자.<./h1>;<br>
+}<br>
+<br>
+function Greeting(props) {<br>
+  const isLoggedIn = props.isLoggedIn;<br>
+  if (isLoggedIn) {<br>
+    return <.UserGreeting />;<br>
+  }<br>
+  return <.GuestGreeting />;<br>
+}<br>
+<br>
+ReactDOM.render(<br>
+  // Try changing to isLoggedIn={true}:<br>
+  <.Greeting isLoggedIn={false} />,<br>
+  document.getElementById('root')<br>
+);<br>
+### 결과 이미지
+![re4](https://user-images.githubusercontent.com/80237099/144761476-2ebbdfd9-f488-4c4d-b52d-4115ede0b7d6.png)
 
 
 <!-- 
