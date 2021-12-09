@@ -1,7 +1,233 @@
 # 원강희 201840218
 
-## [ 12월 1일 ]
+## [ 12월 8일 ]
+### 리엑트 복습과 개념IV
+
+이번 README.md파일도 복습 위주로 작성하겠습니다.<br>
+1. List and Key.
+2. Form.
+3. Raise the state.
+4. Synthesis vs inheritance.
+5. Think of it as React.
+
+## 수업자료: https://ko.reactjs.org/docs/lists-and-keys.html
+>## 1. State and Lifecycle
+리스트는 순차적으로 number를 배열하는 방식이며<br>
+Key는 React가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕는 코딩입니다.<br>
+### 간단 코딩(list)
+function NumberList(props) {<br>
+  const numbers = props.numbers;<br>
+  const listItems = numbers.map((number) =><br>
+    <.li key={number.toString()}><br>
+      {number}<br>
+    <./li><br>
+  );<br>
+  return (<br>
+    <.ul>{listItems}<./ul><br>
+  );<br>
+}<br>
+<br>
+const numbers = [1, 2, 3, 4, 5];<br>
+ReactDOM.render(<br>
+  <.NumberList numbers={numbers} />,<br>
+  document.getElementById('root')<br>
+);<br>
+
+### 간단 코딩(key)
+function ListItem(props) {<br>
+  // Correct! There is no need to specify the key here:<br>
+  return <.li>{props.value}<./li>;<br>
+}<br>
+<br>
+function NumberList(props) {<br>
+  const numbers = props.numbers;<br>
+  const listItems = numbers.map((number) =><br>
+    // Correct! Key should be specified inside the array.<br>
+    <.ListItem key={number.toString()}<br>
+              value={number} /><br>
+  );<br>
+  return (<br>
+    <.ul><br>
+      {listItems}<br>
+    <./ul><br>
+  );<br>
+}<br>
+<br>
+const numbers = [1, 2, 3, 4, 5];<br>
+ReactDOM.render(<br>
+  <.NumberList numbers={numbers} />,<br>
+  document.getElementById('root')<br>
+);<br>
+
+### 결과 이미지
+![20211209_162346](https://user-images.githubusercontent.com/80237099/145352400-e469086e-5e50-455b-a59b-f79626033da8.png)
+<br>
+<br>
+
+
+
+
+## 수업자료: https://ko.reactjs.org/docs/forms.html
+>## 2. Form.<br>
+Form Controlled Component<br>
+HTML 폼 엘리먼트는 폼 엘리먼트 자체가 내부 상태를 가지기 때문에<br>
+React의 다른 DOM 엘리먼트와 다르게 동작하며,<br>
+React에 의해 값이 제어되는 입력 폼 엘리먼트를<br>
+ “제어 컴포넌트 (controlled component)“라고 합니다.<br>
+### 간단 코딩
+class NameForm extends React.Component {<br>
+  constructor(props) {<br>
+    super(props);<br>
+    this.state = {value: ''};<br>
+<br>
+    this.handleChange = this.handleChange.bind(this);<br>
+    this.handleSubmit = this.handleSubmit.bind(this);<br>
+  }<br>
+<br>
+  handleChange(event) {<br>
+    this.setState({value: event.target.value});<br>
+  }<br>
+<br>
+  handleSubmit(event) {<br>
+    alert('A name was submitted: ' + this.state.value);<br>
+    event.preventDefault();<br>
+  }<br>
+<br>
+  render() {<br>
+    return (<br>
+      <.form onSubmit={this.handleSubmit}><br>
+        <.label><br>
+          Name:<br>
+          <.input type="text" value={this.state.value} onChange={this.handleChange} /><br>
+        <./label><br>
+        <.input type="submit" value="Submit" /><br>
+      <./form><br>
+    );<br>
+  }<br>
+}<br>
+<br>
+ReactDOM.render(<br>
+  <.NameForm />,<br>
+  document.getElementById('root')<br>
+);<br>
+
+### 결과 이미지
+![20211209_163014](https://user-images.githubusercontent.com/80237099/145352945-f8ca529f-001f-43f4-9013-11e4b79caa3e.png)<br>
+
+<br>
+<br>
+
+
+## 수업자료: https://ko.reactjs.org/docs/lifting-state-up.html
+>## 3. Raise the state.
+이 부분은 잘 이해하기 힘들어서 설명은 크게 못했습니다.<br>
+필드 관련한 지식이 부족해서 그런 것 같습니다.<br>
+
+### 간단 코딩
+const scaleNames = {<br>
+  c: 'Celsius',<br>
+  f: 'Fahrenheit'<br>
+};<br>
+<br>
+class TemperatureInput extends React.Component {<br>
+  constructor(props) {<br>
+    super(props);<br>
+    this.handleChange = this.handleChange.bind(this);<br>
+    this.state = {temperature: ''};<br>
+  }<br>
+<br>
+  handleChange(e) {<br>
+    this.setState({temperature: e.target.value});<br>
+  }<br>
+<br>
+  render() {<br>
+    const temperature = this.state.temperature;<br>
+    const scale = this.props.scale;<br>
+    return (<br>
+      <.fieldset><br>
+        <.legend>Enter temperature in {scaleNames[scale]}:<./legend><br>
+        <.input value={temperature}<br>
+               onChange={this.handleChange} /><br>
+      <./fieldset><br>
+    );<br>
+  }<br>
+}<br>
+<br>
+class Calculator extends React.Component {<br>
+  render() {<br>
+    return (<br>
+      <.div><br>
+        <.TemperatureInput scale="c" /><br>
+        <.TemperatureInput scale="f" /><br>
+      <./div><br>
+    );<br>
+  }<br>
+}<br>
+<br>
+ReactDOM.render(<br>
+  <.Calculator />,<br>
+  document.getElementById('root')<br>
+);<br>
+
+
+### 결과 이미지
+![20211209_163358](https://user-images.githubusercontent.com/80237099/145353448-01c66b26-fc4c-42d6-abff-5886bf98fbc5.png)
+<br>
+<br>
+
+
+## 수업자료: https://ko.reactjs.org/docs/composition-vs-inheritance.html
+>## 4. Synthesis vs inheritance.
+React는 강력한 합성 모델을 가지고 있으며,<br>
+상속 대신 합성을 사용하여 컴포넌트 간에 코드를 재사용하는 것이 좋습니다.<br>
+Facebook에서는 수천 개의 React 컴포넌트를 사용하지만,<br>
+컴포넌트를 상속 계층 구조로 작성을 권장할만한 사례를 아직 찾지 못했습니다.<br>
+### 간단 코딩
+function FancyBorder(props) {<br>
+  return (<br>
+    <.div className={'FancyBorder FancyBorder-' + props.color}><br>
+      {props.children}<br>
+    <./div><br>
+  );<br>
+}<br>
+<br>
+function WelcomeDialog() {<br>
+  return (<br>
+    <.FancyBorder color="blue"><br>
+      <.h1 className="Dialog-title"><br>
+        Welcome<br>
+      <./h1><br>
+      <.p className="Dialog-message"><br>
+        Thank you for visiting our spacecraft!<br>
+      <./p><br>
+    <./FancyBorder><br>
+  );<br>
+}<br>
+<br>
+ReactDOM.render(<br>
+  <.WelcomeDialog />,<br>
+  document.getElementById('root')<br>
+);<br>
+
+
+### 결과 이미지
+![20211209_163605](https://user-images.githubusercontent.com/80237099/145353706-e26b1256-0e8a-441d-8238-535475805e10.png)
+<br>
+<br>
+
+## 한 학기동안 어려운 과목 수업해주셔서 감사합니다.<br>
+
+
+
+
+
+
+
+
+
+<!-- ## [ 12월 1일 ]
 ### 리엑트 복습과 개념III
+
 이번 README.md파일도 복습 위주로 작성하겠습니다.<br>
 1. State and Lifecycle(스테이트)
 2. Processing events(이벤트)
@@ -99,7 +325,7 @@ ReactDOM.render(<br>
   document.getElementById('root')<br>
 );<br>
 ### 결과 이미지
-![re4](https://user-images.githubusercontent.com/80237099/144761476-2ebbdfd9-f488-4c4d-b52d-4115ede0b7d6.png)
+![re4](https://user-images.githubusercontent.com/80237099/144761476-2ebbdfd9-f488-4c4d-b52d-4115ede0b7d6.png) -->
 
 
 <!-- 
@@ -273,7 +499,7 @@ ReactDOM.render(<br>
 
 
 <!-- ## [ 11월 10일 ]
-=======
+
 
 
 
